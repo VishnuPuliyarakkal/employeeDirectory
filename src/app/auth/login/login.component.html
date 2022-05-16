@@ -1,0 +1,14 @@
+<div class="login">
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <h2 class="active"> Sign In </h2>
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="Username"
+          formControlName="username">
+        <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password"
+          formControlName="password">
+        <button type="submit" class="fadeIn fourth" [disabled]="loginForm.invalid">Log In</button>
+      </form>
+    </div>
+  </div>
+</div>

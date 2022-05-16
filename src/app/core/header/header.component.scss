@@ -1,0 +1,21 @@
+.navbar-header {
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  // height: 80px;
+  padding: 0;
+  background-color: rgb(255, 255, 255);
+  .dropdown.show {
+    .header-item {
+      background-color: rgb(198, 202, 206);
+    }
+  }
+}
+
+
+.header-profile-user {
+  height: 36px;
+  width: 36px;
+  background-color: grey;
+  padding: 2px;
+}

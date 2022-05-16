@@ -1,0 +1,38 @@
+<div class="page-content-wrapper">
+  <div class="container-fluid">
+    <div class="card mt-8">
+      <div class="card-body">
+        <div class="row">
+          <div class=" d-grid gap-2 d-md-flex justify-content-md-end">
+            <div class="col-md-4">
+              <input type="text" class="form-control" placeholder="Search Employees" [(ngModel)]="search">
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="table-responsive">
+            <table class="table table-bordered dt-responsive nowrap"
+              style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+              <thead class="thead-light">
+                <tr>
+                  <th>Employee Name</th>
+                  <th>Phone</th>
+                  <th>Email</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let emp of employees| filter:search">
+                  <td>
+                    <a [routerLink]="['tasks/',emp.id]">{{emp.name}}</a>
+                  </td>
+                  <td>{{emp.phone}}</td>
+                  <td>{{emp.email}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

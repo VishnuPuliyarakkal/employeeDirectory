@@ -1,0 +1,75 @@
+<div class="page-content-wrapper">
+  <div class="container-fluid">
+    <div class="card mt-8">
+      <div class="card-body">
+        <div class="row form-group mt-4">
+          <div class="col-sm-6">
+            <label>Status</label>
+            <select class="form-control" (change)="statusSelection(select.value)" #select [(ngModel)]="status">
+              <option value="">--</option>
+              <option value="completed">Completed</option>
+              <option value="notcompleted">Not Completed</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <div class=" d-grid gap-2 d-md-flex justify-content-md-end">
+              <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add new
+                task</button>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="table-responsive">
+            <table class="table table-bordered dt-responsive nowrap"
+              style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+              <thead class="thead-light">
+                <tr>
+                  <th></th>
+                  <th>Description</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let task of filteredTasks;let i = index">
+                  <td>{{i + 1}}</td>
+                  <td>{{task.title}}</td>
+                  <td>
+                    <span *ngIf="task.completed">Completed</span>
+                    <span *ngIf="!task.completed">Not Completed</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Model -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New Task</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row form-group">
+          <div class="col-md-12">
+            <label>Title</label>
+            <textarea class="form-control" type="text" rows="5" [(ngModel)]="title"></textarea>
+          </div>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" [disabled]="!title"
+        (click)="addNewTask()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

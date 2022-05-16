@@ -1,0 +1,26 @@
+<div class="navbar-header">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="navbar-text ">
+        <h3>{{page}} <span class="badge bg-secondary"> {{totalCount}}</span></h3>
+      </div>
+
+    </div>
+    <div class="col-sm-6 justify-content-end">
+      <div class=" d-grid gap-2 d-md-flex justify-content-md-end">
+        <div class="dropdown">
+          <button class="btn btn header-item waves-effect" type="button" id="dropdownMenuButton1"
+            data-bs-toggle="dropdown" aria-expanded="false" style="border: none;">
+            <img class="rounded-circle header-profile-user" src="../../../../assets/logo-sm-dark.png"
+              alt="Header Avatar">
+            <span class="d-none d-sm-inline-block ml-1">Admin</span>
+            <i class="mdi mdi-chevron-down d-none d-sm-inline-block"></i>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="dropdown">
+            <li><a class="dropdown-item" (click)="logOut()">Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
